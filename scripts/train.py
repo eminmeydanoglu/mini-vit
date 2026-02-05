@@ -15,7 +15,7 @@ from src.model import create_mini_vit
 BATCH_SIZE = 128
 LEARNING_RATE = 1.5e-3
 WEIGHT_DECAY = 0.05
-EPOCHS = 20
+EPOCHS = 300
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 SAVE_DIR = "checkpoints"
 
@@ -89,7 +89,7 @@ def train():
         history["loss"].append(avg_loss)
         print(f"Epoch {epoch + 1} Average Loss: {avg_loss:.6f}")
 
-        if (epoch + 1) % 10 == 0:
+        if (epoch + 1) % 20 == 0:
             save_path = os.path.join(SAVE_DIR, f"mini_vit_epoch_{epoch + 1}.pth")
             torch.save(model.state_dict(), save_path)
             visualize_progress(model, train_dataset, epoch + 1)
