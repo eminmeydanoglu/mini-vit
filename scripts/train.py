@@ -1,6 +1,9 @@
 """Training script for Mini-ViT masked patch prediction."""
 
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import matplotlib.pyplot as plt
 import torch
