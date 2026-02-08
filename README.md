@@ -1,7 +1,7 @@
 # self-taught-vit
 ![Test Reconstruction](checkpoints/viz_test_reconstruction.png)
 
-I watched DINOv3, a massive unsupervised ViT, segment objects it had never seen during training, match the same object accross two very different enviroments, and generally grasp visual concepts. I could hardly believe it, so I set out to test a simple question myself: if you force a tiny ViT to reconstruct lots of images, can it also learn semantic features?
+I watched [DINOv3](https://ai.meta.com/research/dinov3/), a massive self-supervised [ViT](https://arxiv.org/abs/2010.11929), segment objects it had never seen during training, match the same object accross two very different enviroments, and generally grasp visual concepts. I could hardly believe it, so I set out to test a simple question myself: if you force a tiny ViT to reconstruct lots of images, can it also learn semantic features?
 
 Turns out, yes: I trained a ~2.7M-parameter ViT on CIFAR-10 without labels, then evaluated its learned representations with a linear probe that reached 47% accuracy, where 10% is the random baseline (since there are 10 classes).
 
