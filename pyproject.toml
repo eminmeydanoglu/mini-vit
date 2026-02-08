@@ -1,0 +1,12 @@
+[project]
+name = "self-taught-vit"
+version = "0.1.0"
+description = "Proof that Vision Transformers can learn useful representations without labels via masked patch prediction"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.8",
+    "torch>=2.10.0",
+    "torchvision>=0.25.0",
+    "tqdm>=4.67.3",
+]
