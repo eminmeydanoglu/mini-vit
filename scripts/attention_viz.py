@@ -77,7 +77,7 @@ def visualize_attention(
     img_np = image.permute(1, 2, 0).numpy()
     for layer_idx in range(num_layers):
         axes[layer_idx, 0].imshow(img_np)
-        axes[layer_idx, 0].set_title(f"Layer {layer_idx + 1}" if layer_idx == 0 else "")
+        axes[layer_idx, 0].set_title(f"Layer {layer_idx + 1}")
         axes[layer_idx, 0].axis("off")
 
         query_row = query_patch // grid_size
@@ -106,7 +106,7 @@ def visualize_attention(
                 ax.set_title(f"Head {head_idx + 1}")
             ax.axis("off")
 
-    plt.suptitle(f"Attention from patch {query_patch} (red box)", fontsize=14)
+    plt.suptitle(f"Attention Maps (query patch {query_patch}, red box)", fontsize=14)
     plt.tight_layout()
     plt.savefig(save_path, dpi=150, bbox_inches="tight")
     plt.close()
@@ -174,7 +174,7 @@ def main():
     config = ViTConfig()
     model = ViT(config)
     model.load_state_dict(
-        torch.load("checkpoints/mini_vit_epoch_300.pth", map_location=DEVICE)
+        torch.load("checkpoints/vit_epoch_300.pth", map_location=DEVICE)
     )
     model.to(DEVICE)
     model.eval()

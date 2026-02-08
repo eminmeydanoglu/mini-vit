@@ -12,7 +12,7 @@ The model learns semantic structure purely through reconstruction. During traini
 
 The attention heads even seems to specialize (some track edges, some track textures) without being told to.
 
-![Attention Maps](checkpoints/attention_maps.png)
+![Attention Maps](checkpoints/attention_frog_49.png)
 ![Attention Distance](checkpoints/attention_distance.png)
 
 
